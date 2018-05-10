@@ -8,7 +8,7 @@ const app = new Koa()
 const staticPath = './static'
 
 app.use(static(
-  path.join( __dirname,  staticPath)
+  path.join(__dirname,  staticPath)
 ))
 
 
