@@ -44,25 +44,33 @@ MongoClient.connect(conf.url, (err, db) => {
 
 
   // 插入多条数据
-  // let arr = [
-  //   { name: '小米 MAX2', sort: 2, price: 3199, introduction: '小米 max 手机，性能666~' },
-  //   { name: '锤子R1', sort: 3, price: 3299, introduction: '锤子R1，体验666~' },
-  //   { name: '华为 P20 Pro', sort: 4, price: 5499, introduction: '华为P20,拍照666~' },
-  // ];
-  // myDB.collection(conf.collection.goods).insertMany(arr, (err, res) => {
-  //   if (err) throw err;
-  //   console.log("插入的文档数量为: " + res.insertedCount);
-  //   db.close();
-  // })
+  /* let goods = [
+    { name: '小米 MAX2', sort: 2, price: 3199, introduction: '小米 max 手机，性能666~' },
+    { name: '锤子R1', sort: 3, price: 3299, introduction: '锤子R1，体验666~' },
+    { name: '华为 P20 Pro', sort: 4, price: 5499, introduction: '华为P20,拍照666~' },
+  ];
+
+  let users = [
+    { name: 'admin', sort: 0, pwd: '123456' },
+    { name: 'gary', sort: 1, pwd: '123456' },
+    { name: 'test', sort: 2, pwd: '123456' },
+    { name: 'admin2', sort: 3, pwd:'123456'},
+  ];
+
+  myDB.collection(conf.collection.users).insertMany(users, (err, res) => {
+    if (err) throw err;
+    console.log("插入的文档数量为: " + res.insertedCount);
+    db.close();
+  }) */
 
 
   // 查询数据
-  // let whereStr = 'admin';  // {"name":'admin'}
-  // myDB.collection(conf.collection.users).find(whereStr).toArray((err,result)=>{
-  //   if(err) throw err;
-  //   console.log(result);
-  //   db.close();
-  // })
+  let whereStr = 'R1';  // {"name":'admin'}
+  myDB.collection(conf.collection.goods).find(whereStr).toArray((err,result)=>{
+    if(err) throw err;
+    console.log(result);
+    db.close();
+  })
 
 
   // 修改数据(单条)
@@ -123,7 +131,7 @@ MongoClient.connect(conf.url, (err, db) => {
   // });
 
   // $lookup 实现左连接
-  myDB.collection('orders').aggregate(
+  /* myDB.collection('orders').aggregate(
     [
       {
         $lookup:
@@ -139,7 +147,7 @@ MongoClient.connect(conf.url, (err, db) => {
       if (err) throw err;
       console.log(res);
       db.close()
-    });
+    }); */
 
 
 })

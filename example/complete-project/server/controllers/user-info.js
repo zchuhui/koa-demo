@@ -9,9 +9,9 @@ module.exports = {
    * @param  {obejct} ctx 上下文对象
    */
   async signIn(ctx) {
-    
+
     let formData = ctx.request.body
-    
+
     let result = {
       success: false,
       message: '',
@@ -52,11 +52,11 @@ module.exports = {
    * @param    {obejct} ctx 上下文对象
    */
   async getLoginUserInfo(ctx) {
-    console.log('userinfo',ctx);
-    
-    let session =  10 //ctx.session
-    let isLogin =  10 //session.isLogin
-    let userName =  10 //session.userName
+    console.log('userinfo', ctx);
+
+    let session = 10 //ctx.session
+    let isLogin = 10 //session.isLogin
+    let userName = 10 //session.userName
 
     console.log('session=', session)
 
