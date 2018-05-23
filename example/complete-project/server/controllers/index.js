@@ -1,6 +1,8 @@
+const goodsControllers = require('./goods')
+
 module.exports = async (ctx) => {
-  const title = 'home'
+  const data = "home"
   await ctx.render('index', {
-    title
+    data
   })
 }

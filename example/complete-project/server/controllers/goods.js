@@ -9,10 +9,13 @@ module.exports = {
    * @param  {obejct} ctx 上下文对象
    */
   async query(ctx) {
+    
     const request = ctx.request;
 
     const name = request.query.name ? request.query.name : "",
       pageSize = 10;
+    console.log('name',name);
+    
 
     let result = {
       success: false,
@@ -22,6 +25,7 @@ module.exports = {
     }
     
     let data = await goodsService.query({name:name}, pageSize);
+    
     if (data) {
       result = {
         success: true,
@@ -40,4 +44,5 @@ module.exports = {
 
     ctx.body = result
   },
+  
 }
